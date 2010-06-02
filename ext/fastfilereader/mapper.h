@@ -34,10 +34,10 @@ class Mapper_t
 
 		const char *GetChunk (unsigned);
 		void Close();
-		size_t GetFileSize() {return FileSize;}
+		off_t GetFileSize() {return FileSize;}
 
 	private:
-		size_t FileSize;
+		off_t FileSize;
 
 	#ifdef OS_UNIX
 	private:

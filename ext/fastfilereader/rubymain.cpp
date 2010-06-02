@@ -68,8 +68,8 @@ static VALUE mapper_get_chunk (VALUE self, VALUE start, VALUE length)
 		rb_raise (rb_eException, "No Mapper Object");
 
 	// TODO, what if some moron sends us a negative start value?
-	unsigned _start = NUM2INT (start);
-	unsigned _length = NUM2INT (length);
+	off_t _start = NUM2OFFT (start);
+	off_t _length = NUM2OFFT (length);
 	if ((_start + _length) > m->GetFileSize())
 		rb_raise (rb_eException, "Mapper Range Error");
 
